@@ -36,7 +36,7 @@ def halfstep(dir):
   
 def turnSteps(steps, dir):
   #move the actuation sequence a given number of half steps
-  for step in steps:
+  for step in range(steps):
     halfstep(dir)
 
 
