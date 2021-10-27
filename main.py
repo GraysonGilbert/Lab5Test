@@ -24,10 +24,10 @@ def delay_us(tus): # use microseconds to improve time resolution
 def halfstep(dir):
   #dir = +/- 1 for cw or cw respectfully
   global state
-  state += dir
+  state = state + dir
   if state > 7:
     state = 0
-  elif state < 0:
+  if state < 0:
     state = 7
 
   for pin in range(4):    # 4 pins that need to be energized
@@ -37,7 +37,7 @@ def halfstep(dir):
 def turnSteps(steps, dir):
   #move the actuation sequence a given number of half steps
   for step in steps:
-    halfstep(state, dir)
+    halfstep(dir)
 
 
 try:
