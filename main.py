@@ -41,7 +41,7 @@ def turnSteps(steps, dir):
 
 
 try:
-  turnSteps(1000,1)
+  turnSteps(4096,1)
 except:
   pass
 GPIO.cleanup() 
